@@ -20,6 +20,7 @@ class Solution {
             if (map.get(rch) > maxfreq) {
                 maxfreq = map.get(rch);
             }
+        
 
             while ((right - left + 1) - maxfreq > k) {
                 char lch = s.charAt(left);
