@@ -11,6 +11,10 @@ class Solution {
         }
 
         int middle = nums[nums.length / 2];
-        return map.get(middle) == 1;
+        if (map.get(middle) == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
