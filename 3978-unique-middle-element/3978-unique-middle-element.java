@@ -1,20 +1,17 @@
 class Solution {
     public boolean isMiddleElementUnique(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-
-        for(int  i  =0 ; i<nums.length  ; i++){
-            if(map.containsKey(nums[i])){
-                map.put(nums[i],map.get(nums[i])+1);
-            }else{
-                map.put(nums[i],1);
-            }
+       int n = nums.length; 
+       int mid = nums[n/2];
+       int count = 0 ;
+       for(int i =0 ; i<nums.length; i++){
+        if(mid == nums[i]){
+            count++;
         }
-
-        int middle = nums[nums.length / 2];
-        if (map.get(middle) == 1) {
-            return true;
-        } else {
-            return false;
-        }
+       }
+       if(count == 1){
+        return true;
+       }else{
+        return false;
+       }
     }
 }
