@@ -22,10 +22,7 @@ class Solution {
             left++;
             
         }
-        if(map.size() == right-left+1){
-            maxlen = Math.max(maxlen, right-left+1);
-
-        }
+       maxlen = Math.max(maxlen, right-left+1);
         
      }
      return maxlen;
