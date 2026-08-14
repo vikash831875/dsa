@@ -9,7 +9,10 @@ class Solution {
         for(int i = 0; i < nums.length; i++) { 
             sum = sum + nums[i]; 
 
-            int rem = ((sum % k) + k) % k;
+            int rem = sum%k;
+            if(rem<0){
+                rem = rem +k;
+            }
 
             if(map.containsKey(rem)) { 
                 ans = ans + map.get(rem); 
