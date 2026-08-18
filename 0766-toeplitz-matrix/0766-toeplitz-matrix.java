@@ -1,0 +1,11 @@
+class Solution {
+    public boolean isToeplitzMatrix(int[][] arr) {
+        if(arr.length ==1)  return true;
+        for(int i = 1 ; i<arr.length; i++){
+            for(int j =1  ; j<arr[0].length; j++){
+                if(arr[i][j] != arr[i-1][j-1])return false;
+            }
+        }
+        return true;
+    }
+}
