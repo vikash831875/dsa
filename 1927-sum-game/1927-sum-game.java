@@ -27,19 +27,19 @@ class Solution {
             }
         }
 
-        // Same number of '?' on both sides
+        
         if (leftQ == rightQ) {
             return diff != 0;
         }
 
-        // Difference in '?' count is odd
+      
         if ((leftQ - rightQ) % 2 != 0) {
             return true;
         }
 
         int qDiff = leftQ - rightQ;
 
-        // Extra '?' are on left
+       
         if (qDiff > 0) {
             return diff + (qDiff / 2) * 9 != 0;
         }
