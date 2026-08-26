@@ -13,7 +13,7 @@ class Solution {
                 ones++;
             }
 
-            // If we have more than k ones, move left
+            
             while (ones > k) {
                 if (s.charAt(left) == '1') {
                     ones--;
@@ -21,10 +21,10 @@ class Solution {
                 left++;
             }
 
-            // Now window has exactly k ones
+        
             if (ones == k) {
 
-                // Remove leading zeroes as much as possible
+                
                 while (s.charAt(left) == '0') {
                     left++;
                 }
