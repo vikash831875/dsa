@@ -13,7 +13,7 @@ class Solution {
                 if (st.empty()) return false;
 
                 char top = st.peek();
-                if ((top == '(' && ch == ')') || (top == '{' && ch == '}') || (top == '[' && ch == ']')) {
+                if (top == '(' && ch == ')' || top == '{' && ch == '}' || top == '[' && ch == ']') {
                     st.pop();
                 } else {
                     return false; 
