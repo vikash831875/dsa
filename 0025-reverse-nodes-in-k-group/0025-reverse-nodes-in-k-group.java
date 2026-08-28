@@ -13,6 +13,7 @@ class Solution {
         if(head == null || k == 1){
             return head;
         }
+        
         ListNode temp = head;
 
         for(int i =0; i<k ; i++){
