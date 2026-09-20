@@ -9,10 +9,14 @@ class Solution {
             return dp[index];
         }
 
-        return dp[index] = cost[index] + Math.min(
+        int ans = cost[index] + Math.min(
             mincost(cost, index + 1, dp),
             mincost(cost, index + 2, dp)
         );
+
+        dp[index] = ans;
+
+        return ans;
     }
 
     public int minCostClimbingStairs(int[] cost) {
