@@ -1,23 +1,26 @@
 class Solution {
 
-    public int tribonacci(int n) {
-
-        if (n == 0) return 0;
+    public static int fib(int n, int dp[]){
+         if (n == 0) return 0;
         if (n == 1 || n == 2) return 1;
 
-        int n1 = 0;
-        int n2 = 1;
-        int n3 = 1;
+        if(dp[n]!= -1) return dp[n];
 
-        for (int i = 3; i <= n; i++) {
+        int ans = fib(n-1,dp)+fib(n-2,dp)+fib(n-3,dp);
+        dp[n] = ans;
 
-            int fib = n1 + n2 + n3;
+        return ans;
 
-            n1 = n2;
-            n2 = n3;
-            n3 = fib;
-        }
 
-        return n3;
+
+    }
+
+    public int tribonacci(int n) {
+        int dp[] = new int[n+1];
+
+        Arrays.fill(dp,-1);
+
+       
+        return fib(n,dp);
     }
 }
