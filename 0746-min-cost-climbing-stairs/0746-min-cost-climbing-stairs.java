@@ -1,35 +1,32 @@
 class Solution {
-    public static int mincost(int cost[], int index, int dp[]) {
+        
+ public static int min(int[] cost, int index, int dp[]){
+    if(index >= cost.length ) return 0 ;
 
-        if (index >= cost.length) {
-            return 0;
-        }
+    if(dp[index] != -1) return dp[index];
 
-        if (dp[index] != -1) {
-            return dp[index];
-        }
 
-        int ans = cost[index] + Math.min(
-            mincost(cost, index + 1, dp),
-            mincost(cost, index + 2, dp)
-        );
 
-        dp[index] = ans;
+    int x1 = min(cost, index+1, dp);
+    int x2 = min(cost, index+2 , dp);
+    int ans = cost[index]+ Math.min(x1,x2);
 
-        return ans;
-    }
+    dp[index]= ans;
+
+    return ans;
+ }
+     
+    
 
     public int minCostClimbingStairs(int[] cost) {
-
         int n = cost.length;
-
         int dp[] = new int[n];
-
         Arrays.fill(dp, -1);
 
-        return Math.min(
-            mincost(cost, 0, dp),
-            mincost(cost, 1, dp)
-        );
+       return Math.min(min(cost, 0, dp),min(cost, 1, dp)) ;
+
+
+       
+        
     }
 }
