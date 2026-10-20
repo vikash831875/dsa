@@ -4,11 +4,15 @@ class Solution {
         int right =1;
         while(right != nums.length){
 
-            if(nums[left]!=nums[right]){
+            if(nums[left]==nums[right]){
+                right++;
+            }else{
+                nums[left+1]=nums[right];
                 left++;
-                nums[left]=nums[right];
+                right++;
             }
-            right++;
+
+           
 
         }
 
