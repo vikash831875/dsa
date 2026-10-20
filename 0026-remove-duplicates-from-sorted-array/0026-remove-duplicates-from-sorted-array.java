@@ -6,6 +6,7 @@ class Solution {
 
             if(nums[left]==nums[right]){
                 right++;
+                continue;
             }else{
                 nums[left+1]=nums[right];
                 left++;
