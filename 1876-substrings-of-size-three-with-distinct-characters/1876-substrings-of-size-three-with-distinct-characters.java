@@ -21,7 +21,7 @@ class Solution {
             
                  
             }
-            if(right-left+1 ==3 && map.size()==3){
+            if(map.size()==3){
                 count++;
             }
            
