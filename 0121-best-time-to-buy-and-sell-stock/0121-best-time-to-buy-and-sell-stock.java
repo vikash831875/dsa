@@ -3,16 +3,16 @@ class Solution {
         int left =0 ; 
         int right = 1; 
         int maxprofit= 0 ; 
-        while(right!=arr.length){
-            if(arr[right]>arr[left]){
+        while(right<arr.length){
+            if(arr[left]<arr[right]){
                 int profit = arr[right]-arr[left];
-                maxprofit=Math.max(maxprofit,profit);
+                maxprofit = Math.max(profit,maxprofit);
             }else{
                 left=right;
             }
             right++;
         }
-
+       
         return maxprofit;
       
     }
