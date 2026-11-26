@@ -1,12 +1,20 @@
 class Solution {
     public boolean canAliceWin(int n) {
+
         int remove = 10;
 
-        while (n >= remove) {
-            n = n  - remove; 
-            remove = remove-1;
+        while(n >= remove) {
+            n = n - remove;
+            remove--;
+
+            if(n < remove) {
+                return true;
+            }
+
+            n = n - remove;
+            remove--;
         }
 
-        return remove % 2 == 1;
+        return false;
     }
 }
