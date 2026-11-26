@@ -3,8 +3,8 @@ class Solution {
         int remove = 10;
 
         while (n >= remove) {
-            n -= remove;
-            remove--;
+            n = n  - remove; 
+            remove = remove-1;
         }
 
         return remove % 2 == 1;
